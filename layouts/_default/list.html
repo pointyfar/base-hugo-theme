@@ -1,0 +1,20 @@
+{{ define "main" }}
+
+{{.Content}}
+<hr>
+{{ $pages := slice }}
+{{ if (eq .Kind "home") }}
+    {{ $pages = site.RegularPages }}
+{{ else }}
+    {{ $pages = .Pages }}
+{{ end }}
+
+<ul>
+    {{ range $pages }}
+    <li>
+        <a href="{{.RelPermalink}}">{{.Title}}</a>
+    </li>
+    {{ end }}
+</ul>
+
+{{ end }}

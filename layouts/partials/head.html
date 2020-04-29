@@ -1,0 +1,21 @@
+<head>
+    <meta charset="utf-8">
+    
+    {{ $title := (partial "paramcheck" (dict "context" . "test" "title") ) }}
+    {{ with $title }}<title>{{.}}</title>{{ end }}
+    
+    {{ $description := (partial "paramcheck" (dict "context" . "test" "description") ) }}
+    {{ with $description }}<meta name="description" content="{{.}}">{{ end }}
+
+    {{ $author := (partial "paramcheck" (dict "context" . "test" "author") ) }}
+    {{ with $author}}<meta name="author" content="{{.}}">{{end }}
+
+  
+    {{ $m := resources.Get "css/milligram.css" }}
+    {{ $s := resources.Get "css/custom.css" }}
+    {{ $css := slice $m $s | resources.Concat "css/styles.css" | minify }}
+
+    <style>
+        {{ $css.Content | safeCSS }}
+    </style>
+</head>

@@ -1,0 +1,80 @@
+html, body {
+  font-size: 14px;;
+}
+
+.main-container {
+  margin: 1rem 0;
+}
+
+.header {
+  padding: 10rem 2rem;
+  background-color: #EEEEEE;
+  margin: 0;
+}
+code {
+  color: #375e9c;
+}
+
+a, .breadcrumb a {
+  color: #9A348E;
+}
+
+a:hover, .breadcrumb a:hover {
+  color: #5F2164;
+
+}
+
+a code {
+/* color: #44355B; */
+font-style: normal;
+padding-right: 0;;
+}
+
+a code:after {
+  content: ' \25E5';
+  vertical-align: super;
+}
+
+a:hover code {
+  color: #5F2164;
+
+}
+.main-content {
+  padding: 3rem;
+}
+
+.card.content-structure .card-content ol {
+  margin-left: 24px;
+}
+.card.content-structure .card-content ol li ol {
+  margin-top: 8px;
+}
+
+.card.content-structure {
+  margin-bottom: 1rem;
+}
+
+.content li p:not(:last-child) {
+
+  margin-bottom: 0;
+}
+
+.content ol li ol:not([type]) {
+  list-style: lower-alpha;
+}
+
+.content ol li ol li ol:not([type]) {
+  list-style: lower-roman;
+}
+
+.content li ol,
+.content li ul
+{
+  margin-top: 0;
+}
+
+.content li {
+  margin: 0.5rem;
+  margin-bottom: 1rem;;
+}
+

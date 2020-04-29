@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    {{- partial "head.html" . -}}
+    <body>
+        <header class="header">
+            <section class="container">
+                <h1 class="title">
+                    {{ with .Title }}{{ . }}
+                    {{ else }}
+                    <a href="{{site.BaseURL}}">{{ site.Title }}</a>
+                    {{ end }}
+                  </h1>
+                  {{ with .Params.subtitle }}
+                  <h2 class="subtitle">{{.}}</h2>
+                  {{ else }}
+                  {{ if isset .Params "title" }}<a href="{{site.BaseURL}}">{{ site.Title }}</a>{{ end }}
+                  {{ end }}
+            </section>
+        </header>
+        
+        <div class="container content">
+            <div class="card main-container">
+                <div class="card-content">
+                    {{- block "main" . }}
+                    <h2>{{.Title}}</h2>
+                    {{ .Content }}
+                    {{- end }}
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

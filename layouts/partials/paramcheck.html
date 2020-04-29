@@ -1,0 +1,10 @@
+{{ $test := .test }}
+{{ $cx := .context }}
+
+{{ $return := "" }}
+
+{{ if isset $cx.Params $test }}{{ $return = index $cx.Params $test }}
+{{ else if (isset site.Params $test) }}{{ $return = index site.Params $test }}
+{{ end }}
+
+{{ return $return }}
